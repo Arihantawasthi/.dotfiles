@@ -8,7 +8,7 @@ local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup("HighlightYank", {})
 
 
-function M(name)
+function R(name)
     require("plenary.reload").reload_module(name)
 end
 
@@ -41,7 +41,7 @@ autocmd('LspAttach', {
         local opts = { buffer = e.buf }
         vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
         vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-        vim.keymap.set("n", "gi", function() vim.lsp.buf.impementation() end, opts)
+        vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end, opts)
         vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, opts)
         vim.keymap.set("n", "<leader>D", function() vim.lsp.buf.type_definition() end, opts)
         vim.keymap.set("n", "<leader>gr", function() vim.lsp.buf.references() end, opts)

@@ -1,0 +1,8 @@
+{
+  "lazy.nvim": { "branch": "main", "commit": "eab487c2520f0fe9e54eb5e3ea0606e20512492e" },
+  "nvim-treesitter": { "branch": "master", "commit": "979beffc1a86e7ba19bd6535c0370d8e1aaaad3c" },
+  "onedark": { "branch": "master", "commit": "8e4b79b0e6495ddf29552178eceba1e147e6cecf" },
+  "plenary": { "branch": "master", "commit": "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683" },
+  "rose-pine": { "branch": "main", "commit": "87aa437172357ad8f916942bca249ceadc6c68b1" },
+  "tokyonight": { "branch": "main", "commit": "7e5ef71a103e7de5fe6c05f5d6ab97d1640f08cf" }
+}

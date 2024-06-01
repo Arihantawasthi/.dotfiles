@@ -1,4 +1,5 @@
 require("daemon.set")
+require("daemon.remap")
 require("daemon.lazy_init")
 
 local augroup = vim.api.nvim_create_augroup
@@ -6,7 +7,6 @@ local DaemonGroup = augroup('Daemon', {})
 
 local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup("HighlightYank", {})
-
 
 function R(name)
     require("plenary.reload").reload_module(name)
@@ -35,6 +35,7 @@ autocmd({"BufWritePre"}, {
     command = [[%s/\s\+$//e]],
 })
 
+
 autocmd('LspAttach', {
     group = DaemonGroup,
     callback = function (e)
@@ -50,7 +51,7 @@ autocmd('LspAttach', {
         vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
         vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
         vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
-        vim.keymap.set("n", "<leader>vws", function() vim.diagnostic.workspace_symbol() end, opts)
+        vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
         vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
     end
 })

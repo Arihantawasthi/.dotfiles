@@ -5,7 +5,7 @@ return {
         "williamboman/mason-lspconfig.nvim",
         "hrsh7th/nvim-cmp",
         "hrsh7th/cmp-nvim-lsp"
-    }, 
+    },
 
     config = function()
         local cmp = require("cmp")
@@ -37,7 +37,7 @@ return {
                     lspconfig.lua_ls.setup {
                         capabilities = capabilities,
                         settings = {
-                            Lua = { globals = {"vim", "it", "describe", "before_each", "after_each" } }
+                            Lua = { diagnostics = { globals = {"vim", "it", "describe", "before_each", "after_each" } } }
                         }
                     }
                 end,

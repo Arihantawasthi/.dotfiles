@@ -11,7 +11,7 @@ return {
         name = "tokyonight",
         config = function()
             require("tokyonight").setup({
-                style = "dark",
+                style = "night",
                 transparent = true,
                 terminal_colors = true,
                 styles = {
@@ -31,7 +31,7 @@ return {
         name = "rose-pine",
         config = function()
             require('rose-pine').setup({
-                variant = "moon",
+                variant = "main",
                 dim_inactive_windows = false,
                 disable_background = true,
                 extend_background_behind_borders = true,
@@ -59,7 +59,7 @@ return {
         name = "onedark",
         config = function()
             require("onedark").setup({
-                style = "dark",
+                style = "darker",
                 transparent = true,
                 term_colors = true,
 

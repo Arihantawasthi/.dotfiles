@@ -12,3 +12,8 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-d>zz")
 vim.keymap.set("n", "n", "nzz")
 vim.keymap.set("n", "N", "Nzz")
+
+vim.keymap.set("n", "<leader>q", ":copen<CR>")
+vim.keymap.set("n", "<leader>Q", ":cclose<CR>")
+vim.keymap.set("n", "<C-n>", ":cnext<CR>zz")
+vim.keymap.set("n", "<C-b>", ":cprev<CR>zz")

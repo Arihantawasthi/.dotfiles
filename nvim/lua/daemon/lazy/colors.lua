@@ -11,7 +11,7 @@ return {
         name = "tokyonight",
         config = function()
             require("tokyonight").setup({
-                style = "storm",
+                style = "dark",
                 transparent = true,
                 terminal_colors = true,
                 styles = {
@@ -59,7 +59,7 @@ return {
         name = "onedark",
         config = function()
             require("onedark").setup({
-                style = "darker",
+                style = "dark",
                 transparent = true,
                 term_colors = true,
 

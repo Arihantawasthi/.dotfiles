@@ -5,6 +5,7 @@ export ZDOTDIR="$HOME/.config/zsh"
 export HOMEBREW_NO_AUTO_UPDATE=1
 export FZF_DEFAULT_COMMAND="find ~/Documents \( -name node_modules -o -name .git -o -name env -o -name .next \) | rg --files --follow ~/Documents"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_OPTS="--height=40% --layout=reverse --info=inline"
 bindkey -v
 
 export NVM_DIR="$HOME/.nvm"

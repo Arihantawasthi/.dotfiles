@@ -1,0 +1,25 @@
+#!/bin/zsh
+
+if [[ $# -eq 1 ]]; then
+    selected_dir=$1
+else
+    selected_dir=$(fd . ~/Documents/projects ~/Documents --type d -d 1 | fzf)
+fi
+
+if [[ -z $selected_dir ]]; then
+    exit 0
+fi
+
+session_name=$(basename "$selected_dir")
+tmux_running=$(pgrep tmux)
+
+if [[ -z $TMUX ]]; then
+    tmux new-session -s $session_name -c $selected_dir
+    exit 0
+fi
+
+if ! tmux has-session -t $session_name 2>/dev/null; then
+    tmux new-session -ds $session_name -c $selected_dir
+fi
+
+tmux switch-client -t $session_name

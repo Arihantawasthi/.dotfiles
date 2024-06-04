@@ -1,0 +1,47 @@
+live_config_reload = true
+
+import  = [ "~/.config/alacritty/themes/tokyonight.toml" ]
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 12
+
+[font.bold]
+family = "MesloLGLDZ Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "MesloLGLDZ Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "MesloLGLDZ Nerd Font"
+
+[font.offset]
+x = 0
+y = 0
+
+[[keyboard.bindings]]
+chars = "\u001BF"
+key = "Right"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001BB"
+key = "Left"
+mods = "Alt"
+
+[window]
+decorations = "full"
+dynamic_padding = false
+startup_mode = "Windowed"
+
+[window.dimensions]
+columns = 208
+lines = 46
+
+[window.padding]
+x = 0
+y = 0

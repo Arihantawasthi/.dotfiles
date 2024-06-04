@@ -1,4 +1,4 @@
-add_newline = false 
+add_newline = false
 
 format="""
 $username\
@@ -14,8 +14,8 @@ symbol=''
 #format = '[git:\([$branch]($style)\)](bold #1E90FF) [$symbol](bold #00FF00) '
 
 # Without Symbol
-format = '[git:\([$branch]($style)\)](bold #1E90FF) '
-style='bold #FF4500'
+format = '[git:\([$branch]($style)\)](bold blue) '
+style='bold red'
 
 [git_status]
 modified = '✘ '

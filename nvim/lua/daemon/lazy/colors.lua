@@ -1,5 +1,5 @@
 function ColorMyPencils(color)
-    color = color or "tokyonight"
+    color = color or "carbonfox"
     vim.cmd.colorscheme(color)
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
@@ -27,34 +27,6 @@ return {
     },
 
     {
-        "rose-pine/neovim",
-        name = "rose-pine",
-        config = function()
-            require('rose-pine').setup({
-                variant = "main",
-                dim_inactive_windows = false,
-                disable_background = true,
-                extend_background_behind_borders = true,
-
-                emable = {
-                    terminal = true,
-                    migrations = true
-                },
-
-                styles = {
-                    bold = true,
-                    italic = false,
-                    transparency = false
-                },
-
-                highlight_groups = {
-                    Comment = { italic = true }
-                }
-            })
-        end
-    },
-
-    {
         "navarasu/onedark.nvim",
         name = "onedark",
         config = function()
@@ -74,6 +46,28 @@ return {
                 lualine = {
                     transparent = false
                 },
+            })
+        end
+    },
+
+    {
+        "EdenEast/nightfox.nvim",
+        name="nightfox",
+        config = function()
+            require("nightfox").setup({
+                options = {
+                    transparent = true,
+                    style = {
+                        comments = "italic",
+                    }
+                },
+                specs = {
+                    all = {
+                        syntax = {
+                            variable = "#C0CAF5"
+                        }
+                    }
+                }
             })
         end
     }

@@ -4,8 +4,10 @@ format="""
 $username\
 $hostname\
 $directory\
+$python\
 $git_branch\
-$git_status
+$git_status\
+$character
 """
 
 [git_branch]
@@ -43,3 +45,10 @@ disabled = true
 
 [package]
 disabled = true
+
+[python]
+format = '[\[$virtualenv\]]($style) '
+style = 'yellow bold'
+
+[character]
+format = '[❯](bold purple) '

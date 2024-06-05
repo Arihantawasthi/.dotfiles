@@ -1,5 +1,5 @@
 function ColorMyPencils(color)
-    color = color or "carbonfox"
+    color = color or "tokyonight"
     vim.cmd.colorscheme(color)
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
@@ -46,28 +46,6 @@ return {
                 lualine = {
                     transparent = false
                 },
-            })
-        end
-    },
-
-    {
-        "EdenEast/nightfox.nvim",
-        name="nightfox",
-        config = function()
-            require("nightfox").setup({
-                options = {
-                    transparent = true,
-                    style = {
-                        comments = "italic",
-                    }
-                },
-                specs = {
-                    all = {
-                        syntax = {
-                            variable = "#C0CAF5"
-                        }
-                    }
-                }
             })
         end
     }

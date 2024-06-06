@@ -49,6 +49,8 @@ disabled = true
 
 [python]
 format = '[\[$virtualenv\]]($style) '
+detect_files = []
+detect_extensions = []
 style = 'bold red'
 
 [character]

@@ -16,8 +16,8 @@ symbol=''
 #format = '[git:\([$branch]($style)\)](bold #1E90FF) [$symbol](bold #00FF00) '
 
 # Without Symbol
-format = '[git:\([$branch]($style)\)](bold blue) '
-style='bold red'
+format = '[git:\([$branch]($style)\)](blue) '
+style='red'
 
 [git_status]
 modified = '✘ '
@@ -38,6 +38,7 @@ disabled=false
 
 [directory]
 format='[➜ $path]($style)[$read_only]($read_only_style) '
+style = 'bold green'
 
 
 [line_break]
@@ -48,7 +49,7 @@ disabled = true
 
 [python]
 format = '[\[$virtualenv\]]($style) '
-style = 'yellow bold'
+style = 'bold red'
 
 [character]
-format = '[❯](bold purple) '
+format = '[\$](bold purple) '

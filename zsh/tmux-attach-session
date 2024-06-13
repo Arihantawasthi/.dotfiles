@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+selected_session=$(tmux ls -F "#S" | fzf)
+tmux switch-client -t $selected_session

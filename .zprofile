@@ -1,5 +1,6 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+export EDITOR=nvim
 export XDG_CONFIG_HOME=$HOME/.config
 export ZDOTDIR="$HOME/.config/zsh"
 export HOMEBREW_NO_AUTO_UPDATE=1

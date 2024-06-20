@@ -4,7 +4,7 @@ background = '#1b1b1b'
 foreground = '#dfdfe0'
 
 [colors.cursor]
-cursor = '#c0caf5'
+cursor = '#5eacd3'
 text = '#1a1b26'
 
 # Normal colors

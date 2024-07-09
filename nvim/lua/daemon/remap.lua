@@ -20,3 +20,5 @@ vim.keymap.set("n", "<C-b>", ":cprev<CR>zz")
 
 vim.keymap.set("n", "<C-f>", ":silent! ! ~/.config/zsh/tmux-session-manager<CR>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+
+vim.keymap.set("n", "<C-t>", "<C-^>")

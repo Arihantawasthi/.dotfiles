@@ -12,19 +12,19 @@ history = 10000
 size = 12.5
 
 [font.bold]
-family = "VictorMono Nerd Font Mono"
+family = "MesloLGLDZ Nerd Font Mono"
 style = "Bold"
 
 [font.italic]
-family = "VictorMono Nerd Font Mono"
-style = "Oblique"
+family = "MesloLGLDZ Nerd Font Mono"
+style = "Italic"
 
 [font.normal]
-family = "VictorMono Nerd Font Mono"
+family = "MesloLGLDZ Nerd Font Mono"
 
 [font.offset]
-x = 1
-y = 1
+x = 0
+y = 0
 
 [[keyboard.bindings]]
 chars = "\u001BF"

@@ -36,6 +36,20 @@ autocmd({"BufWritePre"}, {
     command = [[%s/\s\+$//e]],
 })
 
+function FormatRange()
+    local start_pos = vim.fn.getpos("'<")
+    local end_pos = vim.fn.getpos("'>")
+
+    local start_row = start_pos[2] - 1
+    local start_col = start_pos[3]
+    local end_row = end_pos[2] - 1
+    local end_col = end_pos[3]
+
+    vim.lsp.buf.format({
+        ["start"] = { line = start_row, character = start_col },
+        ["end"] = { line = end_row, character = end_col }
+    })
+end
 
 autocmd('LspAttach', {
     group = DaemonGroup,

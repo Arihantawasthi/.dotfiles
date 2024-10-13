@@ -40,14 +40,21 @@ function FormatRange()
     local start_pos = vim.fn.getpos("'<")
     local end_pos = vim.fn.getpos("'>")
 
-    local start_row = start_pos[2] - 1
+    local start_row = start_pos[2]
     local start_col = start_pos[3]
-    local end_row = end_pos[2] - 1
+    local end_row = end_pos[2]
     local end_col = end_pos[3]
 
+    if end_col == 0 then
+        end_row = end_row - 1
+        end_col = vim.fn.col({ end_row + 1, 0 }) - 1
+    end
+
     vim.lsp.buf.format({
-        ["start"] = { line = start_row, character = start_col },
-        ["end"] = { line = end_row, character = end_col }
+        range = {
+            ["start"] = { start_row, start_col },
+            ["end"] = { end_row, end_col }
+        }
     })
 end
 

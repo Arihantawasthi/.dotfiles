@@ -14,7 +14,7 @@ local function inspect(o)
 end
 
 local function create_floating_win()
-    local width = vim.api.nvim_get_option("colums")
+    local width = vim.api.nvim_get_option("columns")
     local height = vim.api.nvim_get_option("lines")
     local min_width = math.ceil(width * 0.8)
     local min_height = math.ceil(height * 0.8)
@@ -52,18 +52,18 @@ M.see_implementation = function ()
 
         local def = result[1]
         local buf, win = create_floating_win()
+        print(inspect(def))
 
-        local filename = vim.uri_to_fname(def.uri)
+        local filename = vim.uri_to_fname(def.targetUri)
+        print("FILENAME", filename)
         vim.api.nvim_buf_set_name(buf, filename)
         vim.api.nvim_command('edit ' .. filename)
 
         vim.api.nvim_buf_set_cursor(win, { def.range.start.line + 1, def.range.start.character })
-        vim.api.nvim_set_keymap('n', '<leader>gd', ':so', { noremap = true, silent = true })
+        vim.api.nvim_set_keymap('n', '<leader>gD', ':lua require"seefunc".see_implementation()<CR>', { noremap = true, silent = true })
     end)
 end
 
 M.see_implementation()
-
-vim.api.nvim_set_keymap('n', '<leader>gd', ':so', { noremap = true, silent = true })
 
 return M

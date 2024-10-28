@@ -13,7 +13,9 @@ local function inspect(o)
     end
 end
 
-local function create_floating_win(filename)
+local buffer_stack = {}
+
+local function create_floating_win(adjancent_to_win, filename)
     -- local width = vim.api.nvim_get_option("columns")
     local height = vim.api.nvim_get_option("lines")
     -- local min_width = math.ceil(width * 0.8)
@@ -23,6 +25,11 @@ local function create_floating_win(filename)
     local row = 1
     local col = 2
     local min_width = 70
+
+    if adjancent_to_win then
+        local adj_win_opts = vim.api.nvim_win_get_position(adjancent_to_win)
+        col = adj_win_opts[2] + min_width + 2
+    end
 
     local opts = {
         relative = 'editor',
@@ -42,6 +49,9 @@ local function create_floating_win(filename)
     vim.api.nvim_buf_set_option(buf, 'relativenumber', true)
     vim.api.nvim_buf_set_option(buf, 'number', true)
 
+    table.insert(buffer_stack, win)
+    print(inspect(buffer_stack))
+
     return buf, win
 end
 
@@ -59,10 +69,23 @@ M.see_implementation = function()
             return
         end
 
+        local current_win = vim.api.nvim_get_current_win()
+        local adjancent_to_win = nil
+
+        for _, win in ipairs(buffer_stack) do
+            if win == current_win then
+                adjancent_to_win = win
+                break
+            end
+        end
+
+        print(current_win)
+        print(adjancent_to_win)
+
         local filename = vim.uri_to_fname(def.targetUri)
         local file_content = vim.fn.readfile(filename)
 
-        local buf, win = create_floating_win(filename)
+        local buf, win = create_floating_win(adjancent_to_win, filename)
         vim.api.nvim_buf_set_lines(buf, 0, -1, false, file_content)
 
         local filetype = vim.fn.fnamemodify(filename, ":e")
@@ -70,6 +93,8 @@ M.see_implementation = function()
 
         vim.api.nvim_buf_set_option(buf, "modifiable", false)
         vim.api.nvim_buf_set_option(buf, "readonly", true)
+
+        -- TODO: IMPLEMENT BUFFER STACK!!!!
 
         vim.api.nvim_win_set_cursor(win, { def.targetSelectionRange.start.line + 1, def.targetSelectionRange.start.character })
         vim.api.nvim_set_keymap('n', '<leader>gD', ':lua require"seefunc".see_implementation()<CR>',

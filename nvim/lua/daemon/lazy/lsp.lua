@@ -22,7 +22,7 @@ return {
                 "lua_ls",
                 "pyright",
                 "eslint",
-                "tsserver",
+                "ts_ls",
                 "tailwindcss",
                 "gopls"
             },

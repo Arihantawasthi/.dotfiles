@@ -1,6 +1,25 @@
-ln -s ~/.dotfiles/tmux ~/.config/tmux
-ln -s ~/.dotfiles/alacritty ~/.config/alacritty
-ln -s ~/.dotfiles/starship.toml ~/.config/starship.toml
-ln -s ~/.dotfiles/nvim ~/.config/nvim
-ln -s ~/.dotfiles/.zprofile ~/.zprofile
-ln -s ~/.dotfiles/zsh ~/.config/zsh
+#!/bin/zsh
+
+set -e # Exit if a command exists with a non-zero status
+
+if ! command -v brew &> /dev/null; then
+    echo "Homebrew not found. Installing..."
+    /bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+echo "Updating Homebrew..."
+brew update
+
+echo "Installing required packages"
+brew install neovim tmux starhip alacritty
+
+
+echo "Creating symlinks..."
+ln -sf ~/.dotfiles/tmux ~/.config/tmux
+ln -sf ~/.dotfiles/alacritty ~/.config/alacritty
+ln -sf ~/.dotfiles/starship.toml ~/.config/starship.toml
+ln -sf ~/.dotfiles/nvim ~/.config/nvim
+ln -sf ~/.dotfiles/.zprofile ~/.zprofile
+ln -sf ~/.dotfiles/zsh ~/.config/zsh
+
+echo "Dotfiles installation complete! Restart your terminal for changes to take effect."

@@ -24,7 +24,8 @@ return {
                 "eslint",
                 "ts_ls",
                 "tailwindcss",
-                "gopls"
+                "gopls",
+                "zls"
             },
             handlers = {
                 function(server_name)

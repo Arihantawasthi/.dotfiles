@@ -11,7 +11,7 @@ echo "Updating Homebrew..."
 brew update
 
 echo "Installing required packages"
-brew install neovim tmux starhip alacritty aerospace
+brew install neovim tmux starship alacritty aerospace
 
 
 echo "Creating symlinks..."

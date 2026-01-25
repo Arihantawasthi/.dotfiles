@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
     selected_dir=$1
 else
-    selected_dir=$(fd . ~/Documents/projects ~/Documents --type d -d 1 | fzf)
+    selected_dir=$(fd . ~/Documents/projects ~/Documents/projects/zerohands --type d -d 1 | fzf)
 fi
 
 if [[ -z $selected_dir ]]; then

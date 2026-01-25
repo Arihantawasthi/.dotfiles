@@ -48,5 +48,23 @@ return {
                 },
             })
         end
+    },
+    {
+        "rose-pine/neovim",
+        name = "rose-pine",
+        config = function()
+            require("rose-pine").setup({
+                dark_variant = "main",
+                disable_background = false,
+                enable = {
+                    terminal = true,
+                },
+                styles = {
+                    bold = true,
+                    italic = false,
+                    transparancy = false
+                }
+            })
+        end
     }
 }
